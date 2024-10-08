@@ -1,0 +1,34 @@
+
+.chess-board {
+    display: grid;
+    grid-template-columns: repeat(8, 60px);
+    grid-template-rows: repeat(8, 60px);
+    width: 480px;
+    border: 2px solid black;
+    margin: auto;
+}
+
+
+.chess-board .row:nth-child(odd) div:nth-child(even),
+.chess-board .row:nth-child(even) div:nth-child(odd) {
+    background-color: black;
+}
+
+.chess-board .row:nth-child(odd) div:nth-child(odd),
+.chess-board .row:nth-child(even) div:nth-child(even) {
+    background-color: white;
+}
+
+
+.chess-board .row {
+    display: contents;
+}
+
+.chess-board .row::before {
+    content: "";
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    box-sizing: border-box;
+}
+
